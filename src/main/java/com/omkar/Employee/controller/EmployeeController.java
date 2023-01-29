@@ -23,7 +23,6 @@ public class EmployeeController {
 
 	@PostMapping("/save")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
-
 		Employee emp = employeeService.saveEmployee(employee);
 		return ResponseEntity.ok().body(emp);
 	}
