@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.omkar.Employee.Service.EmployeeService;
 import com.omkar.Employee.model.Employee;
 
@@ -28,7 +30,7 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/getAll")
-	public ResponseEntity<List<Employee>> getAll() {
+	public ResponseEntity<List<Employee>> getAll() throws JsonMappingException, JsonProcessingException {
 
 		List<Employee> allEmployee = employeeService.getAllEmployee();
 		return ResponseEntity.ok().body(allEmployee);
@@ -60,4 +62,10 @@ public class EmployeeController {
 		
 		employeeService.deleteEmployee(id);
 	}
+	
+	@GetMapping("/external")
+	public String ExternalApi() {
+		return "external api called";
+	}
+	
 }

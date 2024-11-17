@@ -1,0 +1,21 @@
+person:
+  name: "John Doe"
+  age: 30
+  address:
+    street: "123 Main St"
+    city: "Mumbai"
+    state: "Maharashtra"
+    country: "India"
+  documents:
+    - type: "PAN"
+      number: "ABCDE1234F"
+      issuedBy: "Income Tax Department"
+      validUntil: "2030-12-31"
+    - type: "Aadhar"
+      number: "9876-5432-1098"
+      issuedBy: "UIDAI"
+      validUntil: "2029-12-31"
+
+external:
+  url: "http://localhost:8888/info"
+  method: "POST"
