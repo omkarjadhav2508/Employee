@@ -43,6 +43,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void deleteEmployee(Integer id) {
+		if(id==0) {
+			throw new IllegalArgumentException("wrong id");
+		}
 
 		employeeRepository.deleteById(id);
 	}
